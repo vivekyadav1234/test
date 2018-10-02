@@ -1,0 +1,16 @@
+.bg{
+	background-color: black;
+}
+ 
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: left;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+

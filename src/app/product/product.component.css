@@ -1,0 +1,12 @@
+ 
+.bg{  
+    
+    height:100%;
+    background-position:abslute;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+.col-md-10{
+  padding-right:5%; 
+
+}

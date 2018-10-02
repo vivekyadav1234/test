@@ -1,0 +1,11 @@
+ .bg{
+    width: 100%;
+    height: 100%;
+    background: url('/home/gloify/file1/src/assets/image/7013751-beautiful-forest.jpg') no-repeat center;
+    background-size: 100% 100%;
+    background-position: top center;
+  } 
+  a{
+  	padding-right: 30px;
+  	font-size: 20px
+  }

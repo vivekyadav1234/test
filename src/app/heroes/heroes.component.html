@@ -1,0 +1,205 @@
+ <div class="">
+
+
+<ng-container>
+ 
+	  <input #newHero
+      (keyup.enter)="addHero(newHero.value)"
+      (blur)="addHero(newHero.value); newHero.value='' " placeholder="Enter member name to add">
+
+    <button (click)="addHero(newHero.value)">Add</button>
+
+    <ul *ngIf="heroes.length>7"><li *ngFor="let hero of heroes">{{hero}}</li></ul> 
+    
+  </ng-container>
+
+   
+<mat-tab-group>
+<mat-tab label="First"> 
+ <div class="container mt-5">
+  
+ 	<div class="row">
+ 		<div class="col-md-4 col-sm-4 col-lg-4 animated-fadeIn">
+       
+ 			 <mat-card>
+ 			 	<div class="animated bounceIn">
+ 			 	<mat-card-header>
+ 			 		<img mat-card-avatar  src="{{cardImage}}">
+ 			 		<mat-card-title>simple</mat-card-title>
+ 			 		<mat-card-subtitle>Simple</mat-card-subtitle>
+
+ 			 	</mat-card-header>
+ 			 	 <img mat-card-image src="{{ cardImage}}">
+ 			 	 <mat-card-title>hello world</mat-card-title>
+ 			 	 <mat-card-subtitle>simple</mat-card-subtitle>
+                 <mat-card-footer>
+                    <a href="">see more</a> |
+                    <a href="">click me!</a>
+                    
+                 </mat-card-footer>
+             </div>
+ 			 </mat-card>
+ 		</div>
+ 		<div class="col-md-4 col-sm-4 col-lg-4">
+
+ 			 <mat-card>
+ 			 	 	<div class="animated bounceIn">
+ 			 	<mat-card-header>
+ 			 		<img mat-card-avatar  src="{{cardImage}}">
+ 			 		<mat-card-title>simple</mat-card-title>
+ 			 		<mat-card-subtitle>Simple</mat-card-subtitle>
+
+ 			 	</mat-card-header>
+ 			 	 <img mat-card-image src=" {{cardImage}}">
+ 			 	 <mat-card-title>hello world</mat-card-title>
+ 			 	 <mat-card-subtitle>simple</mat-card-subtitle>
+                 <mat-card-footer>
+                    <a href="">see more</a> |
+                    <a href="">click me!</a>
+                    
+                 </mat-card-footer>
+             </div>
+ 			 </mat-card>
+ 		</div>
+ 		<div class="col-md-4 col-sm-4 col-lg-4">
+
+ 			 <mat-card>
+ 			 	 	<div class="animated bounceIn">
+ 			 	<mat-card-header>
+ 			 		<img mat-card-avatar  src=" {{cardImage}}">
+ 			 		<mat-card-title>simple</mat-card-title>
+ 			 		<mat-card-subtitle>Simple</mat-card-subtitle>
+
+ 			 	</mat-card-header>
+ 			 	 <img mat-card-image src="{{cardImage}}">
+ 			 	 <mat-card-title>hello world</mat-card-title>
+ 			 	 <mat-card-subtitle>simple</mat-card-subtitle>
+                 <mat-card-footer>
+                    <a href="">see more</a> |
+                    <a href="">click me!</a>
+                    
+                 </mat-card-footer>
+             </div>
+ 			 </mat-card>
+ 		</div>
+ 	</div>
+ </div> 
+
+</mat-tab> 
+
+  <mat-tab label="Second">   the second containt</mat-tab>
+  <mat-tab label="Third"><div class="contant mt-5"> the second containt</div></mat-tab>
+</mat-tab-group>
+
+  <ng-container>
+
+ 
+<div class="mt-5"> 
+  	<h1 style="color: green; text-align: center;">{{user.name}}</h1>
+  	<p style="text-align: center;">
+  		{{user.address}}
+  	</p>
+  	<div *ngIf="user.phone.length>7">
+  	<p>phone</p>
+  	<p *ngFor="let phoneNumber of user.phone">{{phoneNumber}}</p>
+    
+   </div>
+   <div class="text-center mb-5">
+    <input type="password" [(ngModel)]="myPass" placeholder="Enter pass to see member list.." > 
+</div></div>
+  </ng-container>
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="2" *ngIf="myPass==='good'">
+  <thead>
+  <tr>
+      <th style="width: 20%">
+          <mfDefaultSorter by="name">UserName</mfDefaultSorter>
+      </th>
+      <th style="width: 50%">
+          <mfDefaultSorter by="email">UserEmail</mfDefaultSorter>
+      </th>
+      <th style="width: 10%">
+          <mfDefaultSorter by="age">Age</mfDefaultSorter>
+      </th>
+      <th style="width: 20%">
+          <mfDefaultSorter by="city">User City</mfDefaultSorter>
+      </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of mf.data">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td class="text-left">{{user.age}}</td>
+      <td>{{user.city | uppercase}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+      <td colspan="4">
+          <mfBootstrapPaginator [rowsOnPageSet]="[ ]"></mfBootstrapPaginator>
+      </td>
+  </tr>
+  </tfoot>
+</table>
+<!-- Table  -->
+<table class="table table-bordered">
+    <!-- Table head -->
+    <thead>
+      <tr>
+        <th>
+          <!-- Material unchecked -->
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="tableMaterialCheck1">
+            <label class="form-check-label" for="tableMaterialCheck1">Check 1</label>
+          </div>
+        </th>
+        <th>Lorem</th>
+        <th>Ipsum</th>
+        <th>Dolor</th>
+      </tr>
+    </thead>
+    <!-- Table head -->
+
+    <!-- Table body -->
+    <tbody>
+      <tr>
+        <th scope="row">
+          <!-- Material unchecked -->
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="tableMaterialCheck2">
+              <label class="form-check-label" for="tableMaterialCheck2">Check 2</label>
+            </div>
+        </th>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <!-- Material unchecked -->
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="tableMaterialCheck3">
+              <label class="form-check-label" for="tableMaterialCheck3">Check 3</label>
+            </div>
+        </th>
+        <td>Cell 4</td>
+        <td>Cell 5</td>
+        <td>Cell 6</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <!-- Material unchecked -->
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="tableMaterialCheck4">
+              <label class="form-check-label" for="tableMaterialCheck4">Check 4</label>
+            </div>
+        </th>
+        <td>Cell 7</td>
+        <td>Cell 8</td>
+        <td>Cell 9</td>
+      </tr>
+    </tbody>
+   
+  </table>
+  <!-- Table  -->
+    </div>
